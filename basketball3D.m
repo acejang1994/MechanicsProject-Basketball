@@ -17,7 +17,7 @@ function res = basketball3D(itheta, iphi, iVel)
     
 %     initial position = (.267329907, 2.747389194)
     [T, M] = ode45(@projectile, [0:step:end_time], [0.267329907, 0, 2.747389194, v_x, v_y, v_z], options);  % option will end the ode45 calculation when y position hits 0
-%     animate_func(T,M);
+    animate_func(T,M);
    M
    axis([0, 5, -2,2, 0,5]);
 
@@ -34,11 +34,11 @@ function res = basketball3D(itheta, iphi, iVel)
 %     xlabel('x coordinate (m)', 'fontsize', 14);
 %     ylabel('y coordinate (m)', 'fontsize',14);
 %     
-%     4.572 , 3.048
+%    x  4.572 , z 3.048 of the hoop
 %     ball radius = .24m
 %     hoop radius = .27m
 
-    patch([4.57 4.57 4.57 4.57], [.9144 .9144 -.9144 -.9144], [3.048 4.118 4.118 3.048])
+    plot3([4.57 4.57 4.57 4.57, 4.57], [.9144 .9144 -.9144 -.9144, .9144], [3.048 4.118 4.118 3.048 3.048])
     line([4.57 4.57], [0 0] ,[0 3.048]);
     
     hoopx = M(end,1);
